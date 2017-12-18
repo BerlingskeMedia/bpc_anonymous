@@ -1,0 +1,23 @@
+{
+  "name": "bpc_anonymous",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "dependencies": {
+    "hawk": "^6.0.2",
+    "jquery": "^3.2.1"
+  },
+  "devDependencies": {
+    "nano-static-server": "^1.0.0",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "start": "npm run serve | npm run watch",
+    "build": "webpack",
+    "watch": "webpack --watch",
+    "serve": "./node_modules/nano-static-server/bin/server --cfg=./nano-static-server-config.json",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
