@@ -5,31 +5,38 @@
 Example:
 
 ```
-    <script>
-      // bpca.setUrl('http://bpc.local:8085/');
-      // bpca.setApp('test_sso_app');
-      bpca.set({
-        url: 'https://bpc.berlingskemedia-testing.net/',
-        app:'test_sso_app'
-      });
+  <script>
+    bpca.conf({
+      url: 'https://bpc.berlingskemedia-testing.net/',
+      // url: 'http://bpc.local:8085/',
+      app:'test_sso_app'
+    });
 
-      bpca.getAuid(function(auid){
-        if(auid instanceof Error){
-          console.error('GET auid failed');
-          return;
+    // bpca.exists(function(exists){
+    //   console.log('exists', exists);
+    // });
+
+    bpca.get(function(response){
+      if(response instanceof Error){
+        console.error('GET permissions failed');
+        return;
+      }
+      console.log('bpca.response', response);
+      var elem = $('#bpc_auid');
+      if (elem) {
+        if(response.ticket === null){
+          elem.text('Unitialized Safari user');
+        } else {
+          elem.text(response.ticket.user);
         }
-        console.log('auid', auid);
-      });
+      }
+      var elem = $('#bpc_auid_permissions');
+      if (elem) {
+        elem.text(JSON.stringify(response.permissions));
+      }
+    });
 
-      bpca.getPermissions(function(permissions){
-        if(permissions instanceof Error){
-          console.error('GET permissions failed');
-          return;
-        }
-        console.log('permissions', permissions);
-      });
-
-    </script>
+  </script>
 ```
 
 # API
