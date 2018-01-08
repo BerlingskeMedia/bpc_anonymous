@@ -8,6 +8,7 @@
     "jquery": "^3.2.1"
   },
   "dependencies": {
+    "hawk": "^6.0.2",
     "webpack": "^3.10.0"
   },
   "devDependencies": {
