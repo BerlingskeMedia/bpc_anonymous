@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const version = require("./package.json").version;
-
 module.exports = {
   entry: {
     'bpca': './lib/index.js',
@@ -10,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'dist', version),
+    path: path.resolve(__dirname, 'dist'),
     library: 'bpca',
     libraryTarget: 'umd',
     umdNamedDefine: true
