@@ -8,19 +8,14 @@ Example:
   <script>
     bpca.conf({
       url: 'https://bpc.berlingskemedia-testing.net/',
-      // url: 'http://bpc.local:8085/',
       app:'test_sso_app'
     });
 
-    // bpca.exists(function(exists){
-    //   console.log('exists', exists);
-    // });
+    bpca.exists(function(exists){
+      console.log('exists', exists);
+    });
 
     bpca.get(function(response){
-      if(response instanceof Error){
-        console.error('GET permissions failed');
-        return;
-      }
       console.log('bpca.response', response);
       var elem = $('#bpc_auid');
       if (elem) {
@@ -41,14 +36,21 @@ Example:
 
 # API
 
-## setUrl
+## conf
 
-## setApp
+## get
 
-## set
+## exists
 
-## getAuid
 
-## getTicket
+# Development
 
-## getPermissions
+Run `npm install` to install dependencies.
+
+Run `webpack` to build the library to *dist/[VERSION]*-folder.
+
+Run `npm start` to build the libary, watch the files for changes and serve the *dist*-folder from http://localhost:9000/.
+
+## Versioning
+
+Run `npm version [<newversion> | major | minor | patch ]` before pushing new version to GitHub.
