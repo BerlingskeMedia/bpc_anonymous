@@ -1,12 +1,8 @@
 {
   "name": "bpc_anonymous",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/index.js",
-  "dependencies": {
-    "hawk": "^6.0.2",
-    "jquery": "^3.2.1"
-  },
   "dependencies": {
     "hawk": "^6.0.2",
     "webpack": "^3.10.0"
