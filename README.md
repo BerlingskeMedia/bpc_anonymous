@@ -54,3 +54,14 @@ Run `npm start` to build the libary, watch the files for changes and serve the *
 ## Versioning
 
 Run `npm version [<newversion> | major | minor | patch ]` before pushing new version to GitHub.
+
+## Build
+
+The script is build and published by Jenkins to AWS S3. See:
+[https://jenkins.bemit.dk/job/bpc_anonymous/configure](https://jenkins.bemit.dk/job/bpc_anonymous/configure)
+
+Location of builds:
+[https://s3.console.aws.amazon.com/s3/buckets/bpc-assets/dist/?region=eu-west-1&tab=overview](https://s3.console.aws.amazon.com/s3/buckets/bpc-assets/dist/?region=eu-west-1&tab=overview)
+
+Version is pulled from NPM version number in `package.json`.
+
